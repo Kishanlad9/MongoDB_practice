@@ -1,0 +1,68 @@
+
+🟤 Bronze
+
+01.	Show all products
+Ans. db.test_products.find()   OR  db["test_products"].find()
+
+02.	Find all Electronics products
+Ans. db["test_products"].find({category: "Electronics"})
+
+03.	Find products price greater than 50000
+Ans. db["test_products"].find({price: {$gt: 50000}})
+
+04.	Find products price less than 5000
+Ans. db["test_products"].find({price: {$lt: 5000}})
+
+05.	Find products of brand Apple
+Ans. db["test_products"].find({brand: "Apple"})
+
+06.	 Find products rating greater than 4.5
+Ans. db["test_products"].find({rating: {$gt: 4.5}})
+
+07.	 Find products that are in stock
+Ans. db["test_products"].find({inStock: true})
+
+08.	 Find products discount greater than 20
+Ans. db["test_products"].find({discount: {$gt: 20}})
+
+09.	 Find products with tag "mobile"
+Ans. db["test_products"].find({tags: "mobile"})
+
+10.	Find products where category = "Computers"
+Ans. db["test_products"].find({category: "Computers"})
+
+
+
+⚪ Silver
+
+11.	Find products where specs.color = "Black"
+Ans. db.test_products.find({"specs.color": "Black"})
+
+12. Find products where specs.warranty = "1 year"
+Ans. db.test_products.find({"specs.warranty": "1 year"})
+
+13. Find products with specs.ram = "16GB"
+Ans.  db.test_products.find({"specs.ram" : "16GB"})
+
+14. Find products where specs.battery = "30hr"
+Ans. db.test_products.find({"specs.battery" : "30hr"})  or db.test_products.find({"specs.battery" : { $eq : "30hr"}})
+
+15. Find products where specs.sizes contains 9
+Ans. db.test_products.find({"specs.sizes" : 9})
+
+16. Find products where brand is NOT Apple
+Ans. db.test_products.find({"brand" : { $ne: "Apple"}})
+
+17. Find products price greater than or equal to 50000
+Ans. db.test_products.find({"price" : { $gte: 50000}})
+
+18. Find products price less than or equal to 10000
+Ans. db.test_products.find({"price" : { $lte: 10000}})
+
+19. Find products where brand is in [Apple, Samsung]
+Ans. db.test_products.find({"brand" : { $in: ["Apple", "Samsung"]}})
+
+20. Find products where brand NOT in [Boat, Realme]
+Ans. db.test_products.find({"brand" : { $nin: ["Boat", "Realme"]}})
+
+
