@@ -66,3 +66,36 @@ Ans. db.test_products.find({"brand" : { $in: ["Apple", "Samsung"]}})
 Ans. db.test_products.find({"brand" : { $nin: ["Boat", "Realme"]}})
 
 
+
+🟡 Gold
+
+21. Electronics products with price > 50000 AND rating > 4.5
+Ans. db.test_products.find({category: "Electronics", price: { $gt: 50000 }, rating: { $gt: 4.5 }})
+
+22. Products with tag mobile OR laptop
+Ans. db.test_products.find({tags: { $in: ["mobile", "laptop"] }})
+
+23. Products NOT in Electronics category
+Ans. db.test_products.find({category: { $ne: "Electronics" }})
+
+24. Products that are NOT Apple AND NOT Samsung
+Ans. db.test_products.find({brand: { $nin: ["Apple", "Samsung"] }})
+
+25. Products price between 10000 and 50000
+Ans. db.test_products.find({price: { $gte: 10000, $lte: 50000 }})
+
+26. Show first 5 products
+Ans. db.test_products.find().limit(5)
+
+27. Skip first 5 products
+Ans. db.test_products.find().skip(5)
+
+28. Sort products by price ascending
+Ans. db.test_products.find().sort({ price: 1 })
+
+29. Sort products by rating descending
+Ans. db.test_products.find().sort({ rating: -1 })
+
+30. Count products where category = Electronics
+Ans. db.test_products.countDocuments({ category: "Electronics" })
+
